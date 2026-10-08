@@ -2,7 +2,7 @@
 # scheduled jobs read it.
 
 name = "Awesome NZ Data"
-repo_slug = "awesome-open-nz-data"
+repo_slug = "awesome-nz-open-data"
 readme = "README.md"
 
 # Sections that hold entries. "Start here" is a prose summary, so it is not

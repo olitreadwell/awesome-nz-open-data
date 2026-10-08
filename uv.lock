@@ -1,5 +1,5 @@
 version = 1
-revision = 3
+revision = 5
 requires-python = ">=3.12"
 
 [[package]]
@@ -11,7 +11,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "awesome-open-nz-data"
+name = "awesome-nz-open-data"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
