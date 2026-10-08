@@ -1,0 +1,120 @@
+name: Weekly link check
+
+# Checks every link in README.md once a week with lychee. Dead links (404, DNS
+# failure, refused connection) open a single tracking issue that stays updated
+# and closes itself when the links recover. Bot-blocked responses (403 / 999,
+# common for LinkedIn) are not treated as failures. Links that started
+# redirecting are listed in the same issue, because a link that lands somewhere
+# else is usually the first sign it is about to break.
+#
+# Configuration lives in lychee.toml at the repository root, so a local run and
+# this job check the same things.
+
+on:
+  schedule:
+    # Sundays 19:00 UTC, which is Monday morning in New Zealand.
+    - cron: "0 19 * * 0"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: linkcheck
+  cancel-in-progress: false
+
+jobs:
+  linkcheck:
+    name: Check README links
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      GH_TOKEN: ${{ github.token }}
+      # Bump this to update lychee. Dependabot does not track this pinned URL.
+      LYCHEE_VERSION: "v0.24.2"
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v7
+
+      - name: Install lychee
+        run: |
+          set -euo pipefail
+          url="https://github.com/lycheeverse/lychee/releases/download/lychee-${LYCHEE_VERSION}/lychee-x86_64-unknown-linux-gnu.tar.gz"
+          curl -fsSL "$url" -o lychee.tar.gz
+          tar -xzf lychee.tar.gz
+          # v0.24+ release archives extract into a named directory.
+          lychee_bin="$(find . -maxdepth 2 -type f -name lychee | head -n 1)"
+          sudo mv "$lychee_bin" /usr/local/bin/lychee
+          lychee --version
+
+      - name: Check every link
+        id: check
+        run: |
+          set +e
+          lychee --config lychee.toml --no-progress README.md | tee linkcheck-output.txt
+          echo "exit_code=${PIPESTATUS[0]}" >> "$GITHUB_OUTPUT"
+
+      # Informational only: links that resolve, but no longer at the URL the
+      # README lists. Redirects never fail the check.
+      - name: List redirecting links
+        continue-on-error: true
+        run: |
+          set +e
+          lychee --config lychee.toml --max-redirects 0 --no-progress README.md 2>&1 \
+            | grep -E '^\[' > redirects-output.txt
+          echo "redirecting links: $(wc -l < redirects-output.txt | tr -d ' ')"
+
+      - name: Open or update the tracking issue
+        if: steps.check.outputs.exit_code != '0'
+        run: |
+          set -euo pipefail
+          gh label create link-check \
+            --color FBCA04 \
+            --description "Automated dead-link report" 2>/dev/null || true
+          {
+            echo "The weekly link check found one or more dead links in \`README.md\`."
+            echo ""
+            echo "Bot-blocked responses (403 / 429 / 999, common for LinkedIn) are not counted here, only 404s, DNS failures and refused connections."
+            echo ""
+            echo "Reproduce locally:"
+            echo ""
+            echo '```'
+            echo "lychee --config lychee.toml README.md"
+            echo '```'
+            echo ""
+            echo "Latest report (run ${{ github.run_id }}, $(date -u +%Y-%m-%dT%H:%MZ)):"
+            echo ""
+            echo '```'
+            cat linkcheck-output.txt
+            echo '```'
+            if [ -s redirects-output.txt ]; then
+              echo ""
+              echo "Links that now redirect (they resolve, but not at the URL the README lists):"
+              echo ""
+              echo '```'
+              cat redirects-output.txt
+              echo '```'
+            fi
+          } > issue-body.md
+
+          existing=$(gh issue list --label link-check --state open --json number -q '.[0].number' 2>/dev/null || true)
+          if [ -n "${existing:-}" ]; then
+            gh issue edit "$existing" --body-file issue-body.md
+            gh issue comment "$existing" --body "Re-checked on $(date -u +%Y-%m-%d), dead links still present (run ${{ github.run_id }})."
+          else
+            gh issue create \
+              --title "Dead links found in README" \
+              --label link-check \
+              --body-file issue-body.md
+          fi
+
+      - name: Close the issue when the links recover
+        if: steps.check.outputs.exit_code == '0'
+        run: |
+          set -euo pipefail
+          existing=$(gh issue list --label link-check --state open --json number -q '.[0].number' 2>/dev/null || true)
+          if [ -n "${existing:-}" ]; then
+            gh issue comment "$existing" --body "Link check passed on $(date -u +%Y-%m-%d), no dead links remain. Closing automatically."
+            gh issue close "$existing"
+          fi
