@@ -38,6 +38,12 @@ snapshot = "github-stats.json"
 # writes every entry.
 lists = [
     "https://raw.githubusercontent.com/public-apis/public-apis/master/README.md",
+    # public-apis exhausts first: every entry it carries that matches this
+    # country's keywords is already in the readme, so make sources reports
+    # nothing and the grow loop has no candidate to pick. This second table
+    # keeps the proposal stream fed; the loop still judges each row and
+    # records not-a-fit before any adapter is written.
+    "https://raw.githubusercontent.com/n0shake/Public-APIs/master/README.md",
 ]
 keywords = [
     "new zealand",
