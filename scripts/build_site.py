@@ -249,14 +249,20 @@ def parse_readme(text: str) -> dict:
             title = re.split(r"\s*\[!\[", line[2:].strip())[0].strip()
         elif line.startswith("### "):
             name = line[4:].strip()
-            current = {
-                "name": name,
-                "meta": name in META_SECTIONS,
-                "subs": [],
-                "items": [],
-            }
-            sections.append(current)
-            current_sub = None
+            # A third-level heading is a subsection of the current section,
+            # not a new top-level category.
+            if current is not None:
+                current_sub = {"name": name, "items": []}
+                current["subs"].append(current_sub)
+            else:
+                current = {
+                    "name": name,
+                    "meta": name in META_SECTIONS,
+                    "subs": [],
+                    "items": [],
+                }
+                sections.append(current)
+                current_sub = None
         elif line.startswith("## "):
             name = line[3:].strip()
             # "Contents" is the README's own table of contents; the site has
@@ -390,19 +396,26 @@ def render_section(section: dict) -> str:
 
 def flatten(doc: dict) -> list[dict]:
     """Flatten all entry items with their section names."""
-    rows = []
+    rows: list[dict] = []
+
+    def add(section_name: str, item: dict) -> None:
+        if item["type"] == "entry" and not item["url"].startswith("#"):
+            rows.append(
+                {
+                    "name": item["name"],
+                    "url": item["url"],
+                    "description": item["desc"] or "",
+                    "tags": " ".join(item.get("tags", [])),
+                    "category": section_name,
+                }
+            )
+
     for section in doc["sections"]:
         for item in section["items"]:
-            if item["type"] == "entry" and not item["url"].startswith("#"):
-                rows.append(
-                    {
-                        "name": item["name"],
-                        "url": item["url"],
-                        "description": item["desc"] or "",
-                        "tags": " ".join(item.get("tags", [])),
-                        "category": section["name"],
-                    }
-                )
+            add(section["name"], item)
+        for sub in section["subs"]:
+            for item in sub["items"]:
+                add(section["name"], item)
     return rows
 
 
@@ -506,7 +519,7 @@ body {
     "Helvetica Neue", Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.55;
+  line-height: 1.65;
 }
 .wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 .scroll-progress {
@@ -576,6 +589,7 @@ h1 { font-size: 1.35rem; margin: 0; }
   padding-top: 24px;
   padding-bottom: 48px;
 }
+.content { min-width: 0; }
 .toc {
   position: sticky;
   top: 90px;
@@ -616,16 +630,23 @@ h3 { font-size: 1rem; margin: 20px 0 10px; color: var(--accent); }
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 10px 14px;
-  margin-bottom: 8px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
   box-shadow: var(--shadow);
 }
-.group-name { margin: 0 0 6px; font-size: 0.95rem; font-weight: 700; }
-.entry { padding: 2px 0; }
+.group-name { margin: 0 0 10px; font-size: 0.95rem; font-weight: 700; }
+.entry { padding: 6px 0; }
+.sub .entry + .entry { border-top: 1px solid var(--border); }
 .entry .link { color: var(--accent); text-decoration: none; font-weight: 600; }
 .entry .link:hover { text-decoration: underline; }
-.entry .desc { color: var(--muted); font-size: 0.9rem; }
-.entry .desc::before { content: "\\2013  "; color: var(--border); }
+.entry .desc {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+.entry .desc::before { content: none; }
 .tag {
   display: inline-block;
   margin-left: 8px;
@@ -672,6 +693,7 @@ h3 { font-size: 1rem; margin: 20px 0 10px; color: var(--accent); }
   display: block;
   white-space: pre;
   overflow-x: auto;
+  max-width: 100%;
   margin: 10px 0 0;
   padding: 10px 14px;
   line-height: 1.5;
@@ -702,10 +724,14 @@ h3 { font-size: 1rem; margin: 20px 0 10px; color: var(--accent); }
 }
 .back-to-top:hover { background: var(--accent-soft); }
 @media (max-width: 800px) {
-  .layout { grid-template-columns: 1fr; }
+  .layout { grid-template-columns: minmax(0, 1fr); }
   .toc { position: static; max-height: none; }
   #search { width: 100%; }
   .header-inner { flex-direction: column; align-items: stretch; }
+  .header-actions { flex-wrap: wrap; }
+  #search { flex: 1 1 100%; }
+  .btn, .theme-btn { flex: 1 1 auto; text-align: center; }
+  .entry .link, .entry .desc { overflow-wrap: anywhere; }
 }
 @media print {
   .site-header, .toc, .back-to-top, .result-count, .scroll-progress { display: none; }
@@ -778,7 +804,9 @@ sections.forEach((section) => {
   tocList.appendChild(li);
 });
 
-const total = document.querySelectorAll(".item, .group").length;
+const total = document.querySelectorAll(
+  "[data-section]:not([data-static]) .item, [data-section]:not([data-static]) .group"
+).length;
 count.textContent = total + " links";
 
 function update() {
@@ -887,7 +915,11 @@ def main() -> int:
         return 1
     doc = parse_readme(README_PATH.read_text(encoding="utf-8"))
     rows = flatten(doc)
-    sections_html = "\n".join(render_section(s) for s in doc["sections"])
+    # The site has its own navigation, so the README's Contents list would
+    # only repeat it as a wall of cards.
+    sections_html = "\n".join(
+        render_section(s) for s in doc["sections"] if s["name"] != "Contents"
+    )
     categories = [s["name"] for s in doc["sections"] if not s["meta"]]
     stats = f"{len(rows)} links across {len(categories)} categories"
     page = (
