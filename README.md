@@ -131,6 +131,8 @@ These cover most requests. Each one is listed in full under its publisher below.
 
 - New Zealand Transport Agency (NZTA)
 
+    - [Holiday journeys API](https://www.journeys.nzta.govt.nz/api/hotspots) - ⇄ API - ○ Open - predicted busy holiday journey hotspots, as GeoJSON without a key.
+
     - [NZTA open data portal](https://opendata-nzta.opendata.arcgis.com/) - ☰ Portal - ○ Open - 36 transport datasets, including the former InfoConnect feeds. The InfoConnect API pages were retired and now 404.
 
         - [Highway information](https://opendata-nzta.opendata.arcgis.com/datasets/NZTA::nzta-highway-information) - ▦ Data - ○ Open - near real time state highway conditions.
@@ -220,6 +222,8 @@ These cover most requests. Each one is listed in full under its publisher below.
 ### Business and immigration
 
 - Ministry of Business, Innovation and Employment (MBIE)
+
+    - [Open data](https://www.mbie.govt.nz/about/open-data/) - ▦ Data - ○ Open - MBIE datasets and downloadable resources, also indexed in the national open data catalogue.
 
     - [Business API portal](https://portal.api.business.govt.nz/) - ☰ Portal - ◑ Key - MBIE register APIs, subscription required.
 
