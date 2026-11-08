@@ -133,7 +133,7 @@ These cover most requests. Each one is listed in full under its publisher below.
 
     - [Holiday journeys API](https://www.journeys.nzta.govt.nz/api/hotspots) - ⇄ API - ○ Open - predicted busy holiday journey hotspots, as GeoJSON without a key.
 
-    - [NZTA open data portal](https://opendata-nzta.opendata.arcgis.com/) - ☰ Portal - ○ Open - 36 transport datasets, including the former InfoConnect feeds. The InfoConnect API pages were retired and now 404.
+    - [NZTA open data portal](https://opendata-nzta.opendata.arcgis.com/) - ☰ Portal - ○ Open - Transport datasets, including the former InfoConnect feeds. The InfoConnect API pages were retired and now 404.
 
         - [Highway information](https://opendata-nzta.opendata.arcgis.com/datasets/NZTA::nzta-highway-information) - ▦ Data - ○ Open - near real time state highway conditions.
 

@@ -1,7 +1,7 @@
 {
   "name": "Awesome NZ Data",
   "repo_slug": "awesome-nz-open-data",
-  "generated_at": "2026-11-08",
+  "generated_at": "2026-11-09",
   "entry_count": 103,
   "sections": [
     {
@@ -188,7 +188,7 @@
         {
           "name": "NZTA open data portal",
           "url": "https://opendata-nzta.opendata.arcgis.com/",
-          "description": "36 transport datasets, including the former InfoConnect feeds. The InfoConnect API pages were retired and now 404.",
+          "description": "Transport datasets, including the former InfoConnect feeds. The InfoConnect API pages were retired and now 404.",
           "tags": [
             "Portal",
             "Open"
