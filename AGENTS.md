@@ -1,5 +1,12 @@
 # Agent instructions
 
+<!-- coding-standards:begin -->
+Project coding rules: `CODING_STANDARDS.md`. Global baseline:
+`~/.agents/standards/CODING_STANDARDS.md`. Read both before changing
+behaviour.
+<!-- coding-standards:end -->
+
+
 This repository is a curated list of New Zealand data sources. The list is
 `README.md`, and the rules it follows live in the engine at
 <https://github.com/olitreadwell/awesome-list-template>.
