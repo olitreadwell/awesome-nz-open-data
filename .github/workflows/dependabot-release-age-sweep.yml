@@ -1,11 +1,11 @@
 name: Dependabot release-age sweep
 
 # A Dependabot PR whose releases were younger than MIN_AGE_DAYS when it opened
-# never gets auto-merge from the open event alone. This daily sweep re-checks
+# never gets auto-merge from the open event alone. This twice-weekly sweep re-checks
 # every open Dependabot PR so those mature into auto-merge on their own.
 on:
   schedule:
-    - cron: '0 19 * * *'
+    - cron: '0 15 * * 1,4'
   workflow_dispatch:
 
 permissions:
