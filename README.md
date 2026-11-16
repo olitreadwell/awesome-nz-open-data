@@ -215,7 +215,7 @@ These cover most requests. Each one is listed in full under its publisher below.
 
 - Museum of New Zealand Te Papa Tongarewa
 
-    - [Collections API](https://data.tepapa.govt.nz/docs/register.html) - ⇄ API - ◑ Key - registration required for collection records and images.
+    - [Collections API](https://data.tepapa.govt.nz/docs/register.html) - ⇄ API - ◑ Key - collection records and images. Registration issues a key, sent in the `x-api-key` header. Full text search is `GET /collection/search`.
 
 - Parliamentary Counsel Office
 

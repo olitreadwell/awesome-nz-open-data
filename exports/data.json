@@ -630,7 +630,7 @@
         {
           "name": "Collections API",
           "url": "https://data.tepapa.govt.nz/docs/register.html",
-          "description": "registration required for collection records and images.",
+          "description": "collection records and images. Registration issues a key, sent in the `x-api-key` header. Full text search is `GET /collection/search`.",
           "tags": [
             "API",
             "Key"
