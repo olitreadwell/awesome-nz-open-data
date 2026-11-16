@@ -101,6 +101,8 @@ These cover most requests. Each one is listed in full under its publisher below.
 
 - Ministry of Social Development (MSD)
 
+    - [API developer portal](https://api.msd.govt.nz/) - ⇄ API - ◑ Key - MSD services and information for applications and websites.
+
     - [Statistics Page](https://www.msd.govt.nz/about-msd-and-our-work/publications-resources/statistics/index.html) - ☰ Portal - ○ Open.
 
     - [Benefits Data Tables](https://www.msd.govt.nz/about-msd-and-our-work/publications-resources/statistics/benefit/index.html#Datatables6) - ▦ Data - ○ Open.
@@ -133,11 +135,17 @@ These cover most requests. Each one is listed in full under its publisher below.
 
     - [Holiday journeys API](https://www.journeys.nzta.govt.nz/api/hotspots) - ⇄ API - ○ Open - predicted busy holiday journey hotspots, as GeoJSON without a key.
 
+    - [Traffic and Travel API](https://www.nzta.govt.nz/traffic-and-travel-information/use-our-data/) - ⇄ API - ○ Open - transport APIs from NZTA and its partners, without sign-up.
+
     - [NZTA open data portal](https://opendata-nzta.opendata.arcgis.com/) - ☰ Portal - ○ Open - Transport datasets, including the former InfoConnect feeds. The InfoConnect API pages were retired and now 404.
 
         - [Highway information](https://opendata-nzta.opendata.arcgis.com/datasets/NZTA::nzta-highway-information) - ▦ Data - ○ Open - near real time state highway conditions.
 
         - [Road events](https://opendata-nzta.opendata.arcgis.com/datasets/NZTA::road-events) - ▦ Data - ○ Open - closures, crashes and hazards.
+
+        - [Driver licence holders dataset and API](https://opendata-nzta.opendata.arcgis.com/datasets/NZTA::driver-licence-holders-dataset-api) - ▦ Data - ○ Open - driver licence holder counts by licence type, age and region.
+
+        - [EV Roam charging stations](https://opendata-nzta.opendata.arcgis.com/datasets/NZTA::ev-roam-charging-stations) - ▦ Data - ○ Open - electric vehicle charging station locations supplied by station owners and operators.
 
         - [TMS daily traffic counts API](https://opendata-nzta.opendata.arcgis.com/datasets/NZTA::tms-daily-traffic-counts-api) - ⇄ API - ○ Open.
 
@@ -157,6 +165,8 @@ These cover most requests. Each one is listed in full under its publisher below.
 
 - Department of Conservation (DoC)
 
+    - [Developer portal](https://api.doc.govt.nz/) - ⇄ API - ◑ Key - conservation APIs with a subscription key.
+
     - [Maps and data](https://www.doc.govt.nz/our-work/maps-and-data/) - ▦ Data - ○ Open - DOC datasets, maps and geospatial services.
 
 - Land Information New Zealand (LINZ)
@@ -175,6 +185,8 @@ These cover most requests. Each one is listed in full under its publisher below.
 
     - [Digital NZ API](https://digitalnz.org/developers) - ⇄ API - ◑ Key - search across NZ heritage collections.
 
+    - [Charities Register open data](https://www.charities.govt.nz/charities-in-new-zealand/the-charities-register/open-data/) - ⇄ API - ○ Open - OData API and CSV export for the Charities Register.
+
     - [Data.govt.nz](https://www.data.govt.nz/) - ☰ Portal - ○ Open - government dataset catalogue.
 
     - [Government A-Z directory](https://www.govt.nz/organisations/) - ☑ Register - ○ Open - every government organisation and what it does.
@@ -192,6 +204,10 @@ These cover most requests. Each one is listed in full under its publisher below.
     - [Index New Zealand](https://natlib.govt.nz/about-us/open-data/innz-metadata) - ▦ Data - ○ Open - metadata for New Zealand journals and newspapers.
 
     - [Alexander Turnbull Library image downloads](https://natlib.govt.nz/photos?il%5batl_free_download%5d=true) - ▦ Data - ○ Open - free downloads of out-of-copyright images.
+
+- Museum of New Zealand Te Papa Tongarewa
+
+    - [Collections API](https://data.tepapa.govt.nz/docs/register.html) - ⇄ API - ◑ Key - registration required for collection records and images.
 
 - Parliamentary Counsel Office
 
@@ -342,6 +358,10 @@ These cover most requests. Each one is listed in full under its publisher below.
     - [Topographic basemaps (OGC WMS)](https://maps.scinfo.org.nz/basemaps/wms?service=WMS&request=GetCapabilities) - ⇄ API - ○ Open - capabilities document for the basemap service; the bare service URL returns an error page.
 
 ## Non-government organisations
+
+- Auckland War Memorial Museum Tāmaki Paenga Hira
+
+    - [Auckland Museum API](https://api.aucklandmuseum.com/) - ⇄ API - ○ Open - linked open data for the museum's collections, including natural sciences, human history and documentary heritage. DigitalNZ also indexes its records.
 
 - Land Air Water Aotearoa (LAWA)
 
