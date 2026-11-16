@@ -2,7 +2,7 @@
   "name": "Awesome NZ Data",
   "repo_slug": "awesome-nz-open-data",
   "generated_at": "2026-11-16",
-  "entry_count": 111,
+  "entry_count": 115,
   "sections": [
     {
       "name": "Legend",
@@ -370,7 +370,7 @@
         {
           "name": "Developer portal",
           "url": "https://api.doc.govt.nz/",
-          "description": "conservation APIs with a subscription key.",
+          "description": "conservation APIs with a subscription key. Send the key in the `x-api-key` header.",
           "tags": [
             "API",
             "Key"
@@ -379,6 +379,58 @@
           "stars": null,
           "last_push": null,
           "line": 168
+        },
+        {
+          "name": "Tracks API",
+          "url": "https://api.doc.govt.nz/v1/tracks",
+          "description": "track list, track alerts, tracks by region, and track detail. Base path `/v1`.",
+          "tags": [
+            "API",
+            "Key"
+          ],
+          "group": "Department of Conservation (DoC)",
+          "stars": null,
+          "last_push": null,
+          "line": 170
+        },
+        {
+          "name": "Campsites API",
+          "url": "https://api.doc.govt.nz/v2/campsites",
+          "description": "campsite list, campsite alerts, and campsite detail. Base path `/v2`.",
+          "tags": [
+            "API",
+            "Key"
+          ],
+          "group": "Department of Conservation (DoC)",
+          "stars": null,
+          "last_push": null,
+          "line": 172
+        },
+        {
+          "name": "Huts API",
+          "url": "https://api.doc.govt.nz/v2/huts",
+          "description": "hut list, hut alerts, and hut detail. Base path `/v2`.",
+          "tags": [
+            "API",
+            "Key"
+          ],
+          "group": "Department of Conservation (DoC)",
+          "stars": null,
+          "last_push": null,
+          "line": 174
+        },
+        {
+          "name": "Alerts API",
+          "url": "https://api.doc.govt.nz/v2/alerts",
+          "description": "conservation alerts by region, booking service, and id. Base path `/v2`.",
+          "tags": [
+            "API",
+            "Key"
+          ],
+          "group": "Department of Conservation (DoC)",
+          "stars": null,
+          "last_push": null,
+          "line": 176
         },
         {
           "name": "Maps and data",
@@ -391,7 +443,7 @@
           "group": "Department of Conservation (DoC)",
           "stars": null,
           "last_push": null,
-          "line": 170
+          "line": 178
         },
         {
           "name": "LINZ Data Service",
@@ -404,7 +456,7 @@
           "group": "Land Information New Zealand (LINZ)",
           "stars": null,
           "last_push": null,
-          "line": 174
+          "line": 182
         },
         {
           "name": "Public Access Areas",
@@ -417,7 +469,7 @@
           "group": "Herenga ā Nuku Aotearoa (Walking Access Commission)",
           "stars": null,
           "last_push": null,
-          "line": 178
+          "line": 186
         },
         {
           "name": "Outdoor access maps",
@@ -430,7 +482,7 @@
           "group": "Herenga ā Nuku Aotearoa (Walking Access Commission)",
           "stars": null,
           "last_push": null,
-          "line": 180
+          "line": 188
         },
         {
           "name": "Digital NZ API",
@@ -443,7 +495,7 @@
           "group": "Department of Internal Affairs (DIA) (+ DigitalNZ)",
           "stars": null,
           "last_push": null,
-          "line": 186
+          "line": 194
         },
         {
           "name": "Charities Register open data",
@@ -456,7 +508,7 @@
           "group": "Department of Internal Affairs (DIA) (+ DigitalNZ)",
           "stars": null,
           "last_push": null,
-          "line": 188
+          "line": 196
         },
         {
           "name": "Data.govt.nz",
@@ -469,7 +521,7 @@
           "group": "Department of Internal Affairs (DIA) (+ DigitalNZ)",
           "stars": null,
           "last_push": null,
-          "line": 190
+          "line": 198
         },
         {
           "name": "Government A-Z directory",
@@ -482,7 +534,7 @@
           "group": "Department of Internal Affairs (DIA) (+ DigitalNZ)",
           "stars": null,
           "last_push": null,
-          "line": 192
+          "line": 200
         },
         {
           "name": "New Zealand Gazette",
@@ -495,7 +547,7 @@
           "group": "Department of Internal Affairs (DIA) (+ DigitalNZ)",
           "stars": null,
           "last_push": null,
-          "line": 194
+          "line": 202
         },
         {
           "name": "Papers Past",
@@ -508,7 +560,7 @@
           "group": "Department of Internal Affairs (DIA) (+ DigitalNZ)",
           "stars": null,
           "last_push": null,
-          "line": 196
+          "line": 204
         },
         {
           "name": "Turnbull Unpublished Collections",
@@ -521,7 +573,7 @@
           "group": "Department of Internal Affairs (DIA) (+ DigitalNZ)",
           "stars": null,
           "last_push": null,
-          "line": 198
+          "line": 206
         },
         {
           "name": "DigitalNZ API examples",
@@ -534,7 +586,7 @@
           "group": "Department of Internal Affairs (DIA) (+ DigitalNZ)",
           "stars": null,
           "last_push": null,
-          "line": 200
+          "line": 208
         },
         {
           "name": "Publications New Zealand",
@@ -547,7 +599,7 @@
           "group": "Department of Internal Affairs (DIA) (+ DigitalNZ)",
           "stars": null,
           "last_push": null,
-          "line": 202
+          "line": 210
         },
         {
           "name": "Index New Zealand",
@@ -560,7 +612,7 @@
           "group": "Department of Internal Affairs (DIA) (+ DigitalNZ)",
           "stars": null,
           "last_push": null,
-          "line": 204
+          "line": 212
         },
         {
           "name": "Alexander Turnbull Library image downloads",
@@ -573,7 +625,7 @@
           "group": "Department of Internal Affairs (DIA) (+ DigitalNZ)",
           "stars": null,
           "last_push": null,
-          "line": 206
+          "line": 214
         },
         {
           "name": "Collections API",
@@ -586,7 +638,7 @@
           "group": "Museum of New Zealand Te Papa Tongarewa",
           "stars": null,
           "last_push": null,
-          "line": 210
+          "line": 218
         },
         {
           "name": "New Zealand Legislation",
@@ -599,7 +651,7 @@
           "group": "Parliamentary Counsel Office",
           "stars": null,
           "last_push": null,
-          "line": 214
+          "line": 222
         },
         {
           "name": "Budgets and forecasts",
@@ -612,7 +664,7 @@
           "group": "The Treasury",
           "stars": null,
           "last_push": null,
-          "line": 218
+          "line": 226
         },
         {
           "name": "Living Standards Framework dashboard",
@@ -625,7 +677,7 @@
           "group": "The Treasury",
           "stars": null,
           "last_push": null,
-          "line": 220
+          "line": 228
         },
         {
           "name": "Tax Statistics",
@@ -638,7 +690,7 @@
           "group": "Inland Revenue (IRD)",
           "stars": null,
           "last_push": null,
-          "line": 224
+          "line": 232
         },
         {
           "name": "National data collections",
@@ -651,7 +703,7 @@
           "group": "Education Counts",
           "stars": null,
           "last_push": null,
-          "line": 230
+          "line": 238
         },
         {
           "name": "Statistics",
@@ -664,7 +716,7 @@
           "group": "Education Counts",
           "stars": null,
           "last_push": null,
-          "line": 232
+          "line": 240
         },
         {
           "name": "Secondary School Statistics",
@@ -677,7 +729,7 @@
           "group": "New Zealand Qualifications Authority (NZQA)",
           "stars": null,
           "last_push": null,
-          "line": 236
+          "line": 244
         },
         {
           "name": "Open data",
@@ -690,7 +742,7 @@
           "group": "Ministry of Business, Innovation and Employment (MBIE)",
           "stars": null,
           "last_push": null,
-          "line": 242
+          "line": 250
         },
         {
           "name": "Business API portal",
@@ -703,7 +755,7 @@
           "group": "Ministry of Business, Innovation and Employment (MBIE)",
           "stars": null,
           "last_push": null,
-          "line": 244
+          "line": 252
         },
         {
           "name": "Companies Register",
@@ -716,7 +768,7 @@
           "group": "Ministry of Business, Innovation and Employment (MBIE)",
           "stars": null,
           "last_push": null,
-          "line": 246
+          "line": 254
         },
         {
           "name": "Intellectual Property Office (IPONZ)",
@@ -729,7 +781,7 @@
           "group": "Ministry of Business, Innovation and Employment (MBIE)",
           "stars": null,
           "last_push": null,
-          "line": 248
+          "line": 256
         },
         {
           "name": "Insolvency Register",
@@ -742,7 +794,7 @@
           "group": "Ministry of Business, Innovation and Employment (MBIE)",
           "stars": null,
           "last_push": null,
-          "line": 250
+          "line": 258
         },
         {
           "name": "Licensed Building Practitioners (LBP)",
@@ -755,7 +807,7 @@
           "group": "Ministry of Business, Innovation and Employment (MBIE)",
           "stars": null,
           "last_push": null,
-          "line": 252
+          "line": 260
         },
         {
           "name": "Motor Vehicle Traders Register (MVTR)",
@@ -768,7 +820,7 @@
           "group": "Ministry of Business, Innovation and Employment (MBIE)",
           "stars": null,
           "last_push": null,
-          "line": 254
+          "line": 262
         },
         {
           "name": "New Zealand Business Number (NZBN)",
@@ -781,7 +833,7 @@
           "group": "Ministry of Business, Innovation and Employment (MBIE)",
           "stars": null,
           "last_push": null,
-          "line": 256
+          "line": 264
         },
         {
           "name": "Personal Property Securities Register (PPSR)",
@@ -794,7 +846,7 @@
           "group": "Ministry of Business, Innovation and Employment (MBIE)",
           "stars": null,
           "last_push": null,
-          "line": 258
+          "line": 266
         },
         {
           "name": "Radio Spectrum Management (RSM)",
@@ -807,7 +859,7 @@
           "group": "Ministry of Business, Innovation and Employment (MBIE)",
           "stars": null,
           "last_push": null,
-          "line": 260
+          "line": 268
         },
         {
           "name": "Tenancy Bond",
@@ -820,7 +872,7 @@
           "group": "Ministry of Business, Innovation and Employment (MBIE)",
           "stars": null,
           "last_push": null,
-          "line": 262
+          "line": 270
         },
         {
           "name": "Petroleum and Minerals (NZPAM)",
@@ -833,7 +885,7 @@
           "group": "Ministry of Business, Innovation and Employment (MBIE)",
           "stars": null,
           "last_push": null,
-          "line": 264
+          "line": 272
         },
         {
           "name": "NZPAM Geodata Catalogue",
@@ -846,7 +898,7 @@
           "group": "Ministry of Business, Innovation and Employment (MBIE)",
           "stars": null,
           "last_push": null,
-          "line": 266
+          "line": 274
         },
         {
           "name": "Research and statistics",
@@ -859,7 +911,7 @@
           "group": "Immigration New Zealand",
           "stars": null,
           "last_push": null,
-          "line": 270
+          "line": 278
         }
       ]
     },
@@ -877,7 +929,7 @@
           "group": null,
           "stars": null,
           "last_push": null,
-          "line": 274
+          "line": 282
         },
         {
           "name": "Monthly Regional Tourism Estimates",
@@ -890,7 +942,7 @@
           "group": null,
           "stars": null,
           "last_push": null,
-          "line": 276
+          "line": 284
         },
         {
           "name": "Tourism data releases",
@@ -903,7 +955,7 @@
           "group": null,
           "stars": null,
           "last_push": null,
-          "line": 278
+          "line": 286
         },
         {
           "name": "Statistics",
@@ -916,7 +968,7 @@
           "group": "Reserve Bank of New Zealand",
           "stars": null,
           "last_push": null,
-          "line": 282
+          "line": 290
         },
         {
           "name": "Data1850",
@@ -929,7 +981,7 @@
           "group": "New Zealand Institute of Economic Research",
           "stars": null,
           "last_push": null,
-          "line": 286
+          "line": 294
         }
       ]
     },
@@ -947,7 +999,7 @@
           "group": "Environment Canterbury & Partners (ECAN)",
           "stars": null,
           "last_push": null,
-          "line": 292
+          "line": 300
         },
         {
           "name": "GIS Data & APIs",
@@ -960,7 +1012,7 @@
           "group": "Greater Wellington Regional Council (GWRC)",
           "stars": null,
           "last_push": null,
-          "line": 296
+          "line": 304
         }
       ]
     },
@@ -978,7 +1030,7 @@
           "group": "Auckland Council",
           "stars": null,
           "last_push": null,
-          "line": 302
+          "line": 310
         },
         {
           "name": "Auckland Transport API",
@@ -991,7 +1043,7 @@
           "group": "Auckland Council",
           "stars": null,
           "last_push": null,
-          "line": 304
+          "line": 312
         },
         {
           "name": "Auckland Transport Open GIS Data",
@@ -1004,7 +1056,7 @@
           "group": "Auckland Council",
           "stars": null,
           "last_push": null,
-          "line": 306
+          "line": 314
         },
         {
           "name": "GIS Data",
@@ -1017,7 +1069,7 @@
           "group": "Wellington City Council (WCC)",
           "stars": null,
           "last_push": null,
-          "line": 310
+          "line": 318
         },
         {
           "name": "Metlink Open Data",
@@ -1030,7 +1082,7 @@
           "group": "Wellington City Council (WCC)",
           "stars": null,
           "last_push": null,
-          "line": 312
+          "line": 320
         },
         {
           "name": "Open Data Portal",
@@ -1043,7 +1095,7 @@
           "group": "Christchurch City Council",
           "stars": null,
           "last_push": null,
-          "line": 316
+          "line": 324
         },
         {
           "name": "Whanganui GeoSpatial",
@@ -1056,7 +1108,7 @@
           "group": "Whanganui District Council",
           "stars": null,
           "last_push": null,
-          "line": 320
+          "line": 328
         },
         {
           "name": "Open data on Koordinates",
@@ -1069,7 +1121,7 @@
           "group": "Whanganui District Council",
           "stars": null,
           "last_push": null,
-          "line": 322
+          "line": 330
         },
         {
           "name": "Cemetery Search",
@@ -1082,7 +1134,7 @@
           "group": "Whanganui District Council",
           "stars": null,
           "last_push": null,
-          "line": 324
+          "line": 332
         },
         {
           "name": "Property and Rating Search",
@@ -1095,7 +1147,7 @@
           "group": "Whanganui District Council",
           "stars": null,
           "last_push": null,
-          "line": 326
+          "line": 334
         },
         {
           "name": "Food Safety",
@@ -1108,7 +1160,7 @@
           "group": "Whanganui District Council",
           "stars": null,
           "last_push": null,
-          "line": 328
+          "line": 336
         },
         {
           "name": "GIS Data & APIs",
@@ -1121,7 +1173,7 @@
           "group": "Porirua City Council",
           "stars": null,
           "last_push": null,
-          "line": 332
+          "line": 340
         }
       ]
     },
@@ -1139,7 +1191,7 @@
           "group": "NIWA",
           "stars": null,
           "last_push": null,
-          "line": 338
+          "line": 346
         },
         {
           "name": "CliFlo Climate Database",
@@ -1152,7 +1204,7 @@
           "group": "NIWA",
           "stars": null,
           "last_push": null,
-          "line": 340
+          "line": 348
         },
         {
           "name": "River Environment Classification (REC) v2.0 (OGC WMS)",
@@ -1165,7 +1217,7 @@
           "group": "NIWA",
           "stars": null,
           "last_push": null,
-          "line": 342
+          "line": 350
         },
         {
           "name": "Tide forecasts",
@@ -1178,7 +1230,7 @@
           "group": "NIWA",
           "stars": null,
           "last_push": null,
-          "line": 344
+          "line": 352
         },
         {
           "name": "UV forecasts",
@@ -1191,7 +1243,7 @@
           "group": "NIWA",
           "stars": null,
           "last_push": null,
-          "line": 346
+          "line": 354
         },
         {
           "name": "SolarView",
@@ -1204,7 +1256,7 @@
           "group": "NIWA",
           "stars": null,
           "last_push": null,
-          "line": 348
+          "line": 356
         },
         {
           "name": "GeoNet API",
@@ -1217,7 +1269,7 @@
           "group": "GNS Science",
           "stars": null,
           "last_push": null,
-          "line": 352
+          "line": 360
         },
         {
           "name": "LRIS Portal - Science/Land GIS Data & APIs",
@@ -1230,7 +1282,7 @@
           "group": "Landcare Research | Manaaki Whenua",
           "stars": null,
           "last_push": null,
-          "line": 356
+          "line": 364
         },
         {
           "name": "Topographic basemaps (OGC WMS)",
@@ -1243,7 +1295,7 @@
           "group": "Landcare Research | Manaaki Whenua",
           "stars": null,
           "last_push": null,
-          "line": 358
+          "line": 366
         }
       ]
     },
@@ -1261,7 +1313,7 @@
           "group": "Auckland War Memorial Museum Tāmaki Paenga Hira",
           "stars": null,
           "last_push": null,
-          "line": 364
+          "line": 372
         },
         {
           "name": "Natural resources data",
@@ -1274,7 +1326,7 @@
           "group": "Land Air Water Aotearoa (LAWA)",
           "stars": null,
           "last_push": null,
-          "line": 368
+          "line": 376
         },
         {
           "name": "Organism Register",
@@ -1287,7 +1339,7 @@
           "group": "New Zealand Organisms Register",
           "stars": null,
           "last_push": null,
-          "line": 372
+          "line": 380
         },
         {
           "name": "Charts and data",
@@ -1300,7 +1352,7 @@
           "group": "Figure NZ (formally Wiki New Zealand)",
           "stars": null,
           "last_push": null,
-          "line": 376
+          "line": 384
         }
       ]
     },
@@ -1318,7 +1370,7 @@
           "group": "New Zealand Electricity Industry",
           "stars": null,
           "last_push": null,
-          "line": 382
+          "line": 390
         },
         {
           "name": "Market Info (CDS)",
@@ -1331,7 +1383,7 @@
           "group": "New Zealand Electricity Industry",
           "stars": null,
           "last_push": null,
-          "line": 384
+          "line": 392
         },
         {
           "name": "Developer Centre",
@@ -1344,7 +1396,7 @@
           "group": "NZ Post",
           "stars": null,
           "last_push": null,
-          "line": 388
+          "line": 396
         },
         {
           "name": "NZ places listings",
@@ -1357,7 +1409,7 @@
           "group": "Zenbu",
           "stars": null,
           "last_push": null,
-          "line": 392
+          "line": 400
         },
         {
           "name": "Vehicle information API",
@@ -1370,7 +1422,7 @@
           "group": "Carjam",
           "stars": null,
           "last_push": null,
-          "line": 396
+          "line": 404
         },
         {
           "name": "Geospatial data & APIs",
@@ -1383,7 +1435,7 @@
           "group": "Koordinates",
           "stars": null,
           "last_push": null,
-          "line": 400
+          "line": 408
         },
         {
           "name": "Event API",
@@ -1396,7 +1448,7 @@
           "group": "Eventfinda",
           "stars": null,
           "last_push": null,
-          "line": 404
+          "line": 412
         },
         {
           "name": "TradeMe API",
@@ -1409,7 +1461,7 @@
           "group": "TradeMe",
           "stars": null,
           "last_push": null,
-          "line": 408
+          "line": 416
         },
         {
           "name": "Xero API",
@@ -1422,7 +1474,7 @@
           "group": "Xero",
           "stars": null,
           "last_push": null,
-          "line": 412
+          "line": 420
         },
         {
           "name": "API documentation",
@@ -1435,7 +1487,7 @@
           "group": "Vend (now Lightspeed)",
           "stars": null,
           "last_push": null,
-          "line": 416
+          "line": 424
         },
         {
           "name": "Web Services API",
@@ -1448,7 +1500,7 @@
           "group": "Psoda",
           "stars": null,
           "last_push": null,
-          "line": 420
+          "line": 428
         },
         {
           "name": "ASB API",
@@ -1461,7 +1513,7 @@
           "group": "ASB",
           "stars": null,
           "last_push": null,
-          "line": 424
+          "line": 432
         }
       ]
     },
@@ -1480,7 +1532,7 @@
           "group": null,
           "stars": null,
           "last_push": null,
-          "line": 430
+          "line": 438
         },
         {
           "name": "Open NZ datasets",
@@ -1494,7 +1546,7 @@
           "group": null,
           "stars": null,
           "last_push": null,
-          "line": 432
+          "line": 440
         }
       ]
     },

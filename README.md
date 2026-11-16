@@ -165,7 +165,15 @@ These cover most requests. Each one is listed in full under its publisher below.
 
 - Department of Conservation (DoC)
 
-    - [Developer portal](https://api.doc.govt.nz/) - ⇄ API - ◑ Key - conservation APIs with a subscription key.
+    - [Developer portal](https://api.doc.govt.nz/) - ⇄ API - ◑ Key - conservation APIs with a subscription key. Send the key in the `x-api-key` header.
+
+        - [Tracks API](https://api.doc.govt.nz/v1/tracks) - ⇄ API - ◑ Key - track list, track alerts, tracks by region, and track detail. Base path `/v1`.
+
+        - [Campsites API](https://api.doc.govt.nz/v2/campsites) - ⇄ API - ◑ Key - campsite list, campsite alerts, and campsite detail. Base path `/v2`.
+
+        - [Huts API](https://api.doc.govt.nz/v2/huts) - ⇄ API - ◑ Key - hut list, hut alerts, and hut detail. Base path `/v2`.
+
+        - [Alerts API](https://api.doc.govt.nz/v2/alerts) - ⇄ API - ◑ Key - conservation alerts by region, booking service, and id. Base path `/v2`.
 
     - [Maps and data](https://www.doc.govt.nz/our-work/maps-and-data/) - ▦ Data - ○ Open - DOC datasets, maps and geospatial services.
 
